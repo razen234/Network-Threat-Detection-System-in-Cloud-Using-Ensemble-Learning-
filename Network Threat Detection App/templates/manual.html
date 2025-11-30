@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Manual Predict (Fill The Packet Data)</h2>
+
+  <form method="post" class="card grid">
+    {% for f in top15_fields %}
+      <div class="field">
+        <label>{{ f }}</label>
+        <input
+          type="number"
+          step="any"
+          name="{{ f }}"
+          placeholder="{{ f }}"
+          value="{{ form_values.get(f, '') }}"
+        >
+      </div>
+    {% endfor %}
+
+    <div class="field field-full">
+      <p class="hint">Select model(s)</p>
+      <div class="model-list">
+        {% for m in model_names %}
+          <label class="model-pill">
+            <input
+              type="checkbox"
+              name="models"
+              value="{{ m }}"
+              {% if chosen_models is defined and m in chosen_models %}checked{% endif %}
+            >
+            <span>{{ m }}</span>
+          </label>
+        {% endfor %}
+      </div>
+    </div>
+
+    <p class="hint field-full">We’ll build the 78-feature row from these 15 values (others set to 0), then scale → select → predict.</p>
+    <button class="btn" type="submit">Predict</button>
+  </form>
+{% endblock %}

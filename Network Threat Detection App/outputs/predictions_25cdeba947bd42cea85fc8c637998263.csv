@@ -1,0 +1,16 @@
+Row,RandomForest Classifier Label,RandomForest Classifier Prob,Voting Classifier Label,Voting Classifier Prob
+1,Malicious,1.0,Malicious,0.8134536446074838
+2,Malicious,0.95,Benign,0.4824834545945426
+3,Benign,0.41,Benign,0.2590192860000083
+4,Malicious,0.94,Malicious,0.827585214858711
+5,Benign,0.15,Benign,0.18401928600004266
+6,Benign,0.26,Benign,0.19957484155558294
+7,Malicious,1.0,Malicious,0.8258201247350151
+8,Malicious,0.96,Benign,0.4632378225937732
+9,Benign,0.17,Benign,0.18401928600001224
+10,Benign,0.14416666666666667,Benign,0.18235261933337607
+11,Benign,0.13166666666666665,Benign,0.18396373044445716
+12,Malicious,0.9455,Malicious,0.8339282483595206
+13,Malicious,0.84,Malicious,0.6484996057713726
+14,Malicious,0.7075,Malicious,0.699344123000572
+15,Malicious,0.95,Benign,0.4900279884922896

@@ -1,0 +1,16 @@
+Row,RandomForest Classifier Label,RandomForest Classifier Prob,AdaBoost Classifier Label,AdaBoost Classifier Prob,Voting Classifier Label,Voting Classifier Prob
+1,Malicious,1.0,Malicious,0.5093266074452626,Malicious,0.5078242315971531
+2,Malicious,1.0,Malicious,0.5093266074452626,Malicious,0.5078242315971531
+3,Malicious,0.99,Malicious,0.5093266074452626,Malicious,0.5078242315971532
+4,Malicious,1.0,Malicious,0.6782398035721915,Malicious,0.8697178389808684
+5,Malicious,1.0,Malicious,0.6782398035721915,Malicious,0.869722245420386
+6,Malicious,1.0,Malicious,0.5093266074452626,Malicious,0.5078242315971531
+7,Malicious,0.99,Malicious,0.5093266074452626,Malicious,0.5078242315971532
+8,Malicious,0.98,Malicious,0.5093266074452626,Malicious,0.5078242315971527
+9,Malicious,1.0,Malicious,0.6782398035721915,Malicious,0.8697208366109518
+10,Malicious,1.0,Malicious,0.6525201385480496,Malicious,0.8585346321280722
+11,Malicious,1.0,Malicious,0.6782398035721915,Malicious,0.8697182590361688
+12,Malicious,1.0,Malicious,0.5093266074452626,Malicious,0.5078242315971531
+13,Malicious,1.0,Malicious,0.6782398035721915,Malicious,0.8697244787351401
+14,Malicious,1.0,Malicious,0.6782398035721915,Malicious,0.8697189457025241
+15,Malicious,1.0,Malicious,0.6806064197887117,Malicious,0.8582688737609195

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Upload &amp; Predict (Network Packet CSV)</h2>
+
+  <form method="post" enctype="multipart/form-data" class="card">
+    <label for="csv">Choose a CSV file</label>
+    <input id="csv" type="file" name="csv" accept=".csv" required>
+
+    <p class="hint">Select model(s)</p>
+    <div class="model-list">
+      {% for m in model_names %}
+        <label class="model-pill">
+          <input type="checkbox" name="models" value="{{ m }}"
+            {% if chosen_models is defined and m in chosen_models %}checked{% endif %}>
+          <span>{{ m }}</span>
+        </label>
+      {% endfor %}
+    </div>
+
+    <p class="hint small">We will internally scale all 78 features and select your trained 15 features via SelectKBest.</p>
+    <button class="btn" type="submit">Check Packet</button>
+  </form>
+
+  {% if per_row is defined and per_row %}
+    <div class="card results-card">
+      <h3>Prediction details (first {{ per_row|length }} rows)</h3>
+      <div class="results-table-wrap">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              {% for m in chosen_models %}
+                <th>{{ m }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in per_row %}
+              <tr>
+                <td>{{ row.idx }}</td>
+                {% for m in chosen_models %}
+                  {% set cell = row.preds[m] %}
+                  <td class="label-{{ cell.label|lower }}">
+                    {{ cell.label }}
+                    {% if cell.proba is not none %}
+                      <span class="proba">({{ '%.2f'|format(cell.proba) }})</span>
+                    {% endif %}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <p class="hint small">Showing at most 20 rows. Download below to see all predictions.</p>
+    </div>
+  {% endif %}
+
+  {% if download_id is defined %}
+    <a class="btn download-btn" href="{{ url_for('download', file_id=download_id) }}">Download full results CSV</a>
+  {% endif %}
+{% endblock %}

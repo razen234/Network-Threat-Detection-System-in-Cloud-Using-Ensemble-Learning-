@@ -1,0 +1,17 @@
+[
+  "Flow Duration",
+  "Fwd Pkt Len Max",
+  "Fwd Pkt Len Std",
+  "Flow IAT Max",
+  "Fwd IAT Tot",
+  "Fwd IAT Std",
+  "Bwd IAT Tot",
+  "RST Flag Cnt",
+  "PSH Flag Cnt",
+  "ACK Flag Cnt",
+  "ECE Flag Cnt",
+  "Down/Up Ratio",
+  "Init Fwd Win Byts",
+  "Init Bwd Win Byts",
+  "Fwd Seg Size Min"
+]

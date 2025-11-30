@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Threat Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="{{ url_for('static', filename='Logocb.png') }}" alt="Logo" class="logo">
+          <h1>Threat Detection System</h1>
+        </div>
+
+        <nav>
+          <a href="{{ url_for('upload') }}" class="{% if request.endpoint == 'upload' %}active{% endif %}">Upload</a>
+          <a href="{{ url_for('manual') }}" class="{% if request.endpoint == 'manual' %}active{% endif %}">Manual</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-wrap">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-wrap">
+            {% for category, msg in messages %}
+              <div class="flash flash-{{ category }}">{{ msg }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">&copy; {{ 2025 }} Threat Detection Demo • CIC-IDS-2018</div>
+    </footer>
+  </body>
+</html>
